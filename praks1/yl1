@@ -1,0 +1,11 @@
+#!/bin/bash
+
+
+#Ylesanne kasutaja tervitamiseks
+kasutaja=`whoami`
+esitaht=`whoami | cut -c1 | tr [a-z] [A-Z]`
+loputahed=`whoami | cut -c2-4`
+
+echo "Tere $esitaht$loputahed!"
+
+
