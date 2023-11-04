@@ -1,0 +1,26 @@
+#!/bin/bash
+
+
+# Luuakse muutuja aasta vaartusega 2016
+aasta=2016
+
+#luuakse muutuja president vaartusega Kersti Kaljulaid
+president="Kersti Kaljulaid"
+
+#luuakse muutuja lause_keskosa vaartusega
+lause_keskosa=". aastal valiti Eesti presidendiks "
+
+arvSoneks(){
+ echo "$1"
+
+}
+
+# Luuakse muutuja lause, kus ühendatakse muutujad
+
+lause="$(arvSoneks $aasta)$lause_keskosa$president"
+
+
+# Valjastatakse muutuja lasue väärtus ekraanile
+echo $lause
+
+ 
