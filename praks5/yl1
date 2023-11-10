@@ -1,0 +1,23 @@
+#!/bin/bash
+# See skript küsib kasutajalt vanust ja väljastab vastavalt sellele seletava kirjelduse.
+
+# Küsi kasutajalt vanust
+read -p "Sisesta (oma) vanus: " vanus
+
+# Kontrolli, kas sisestatud vanus on positiivne arv
+if ! [[ "$vanus" =~ ^[0-9]+$ ]]; then
+    echo "Vigane sisend. Palun sisesta positiivne täisarv."
+    exit 1
+fi
+
+# Kontrolli, millises vanusegrupis kasutaja on
+if [ $vanus -ge 0 ] && [ $vanus -le 11 ]; then
+    echo "Oled laps."
+elif [ $vanus -ge 12 ] && [ $vanus -le 18 ]; then
+    echo "Oled nooruk."
+elif [ $vanus -ge 19 ] && [ $vanus -le 63 ]; then
+    echo "Oled täiskasvanu."
+else
+    echo "Oled senjoor."
+fi
+

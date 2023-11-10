@@ -1,0 +1,20 @@
+#!/bin/bash
+# See skript kasutab süsteemi kellaaja teavet ja tervitab kasutajat vastavalt sellele.
+
+# Saame hetke kellaaja tunni
+aeg=$(date +%H)
+
+# Saame kasutaja nime
+kasutajanimi=$(whoami)
+
+# Tervita vastavalt hetke kellaajale
+if [ $aeg -ge 6 ] && [ $aeg -lt 12 ]; then
+    echo "Tere hommikust, $kasutajanimi!"
+elif [ $aeg -ge 12 ] && [ $aeg -lt 18 ]; then
+    echo "Tere päevast, $kasutajanimi!"
+elif [ $aeg -ge 18 ] && [ $aeg -lt 22 ]; then
+    echo "Tere õhtust, $kasutajanimi!"
+else
+    echo "Head ööd, $kasutajanimi!"
+fi
+
