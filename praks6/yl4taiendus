@@ -1,0 +1,23 @@
+#!/bin/bash
+# See skript tuvastab, kas esimesed 20 arvu on algarvud või mitte.
+
+# Funktsioon, mis kontrollib, kas antud arv on algarv
+on_algarv() {
+    local i
+    for ((i=2; i<=$1/2; i++)); do
+        if [ $(( $1 % i )) -eq 0 ]; then
+            return 1  # Arv ei ole algarv
+        fi
+    done
+    return 0  # Arv on algarv
+}
+
+# Kontrolli, kas esimesed 20 arvu on algarvud või mitte
+for ((arv=2; arv<=20; arv++)); do
+    if on_algarv "$arv"; then
+        echo "$arv on algarv."
+    else
+        echo "$arv ei ole algarv."
+    fi
+done
+

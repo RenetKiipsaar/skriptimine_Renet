@@ -1,0 +1,30 @@
+#!/bin/bash
+# See skript tuvastab, kas sisestatud arv on algarv või mitte.
+
+# Küsi kasutajalt arvu
+read -p "Sisesta arv: " arv
+
+# Kontrolli, kas sisestatud väärtus on positiivne täisarv
+if ! [[ "$arv" =~ ^[1-9][0-9]*$ ]]; then
+    echo "Vigane sisend. Palun sisesta positiivne täisarv."
+    exit 1
+fi
+
+# Funktsioon, mis kontrollib, kas antud arv on algarv
+on_algarv() {
+    local i
+    for ((i=2; i<=arv/2; i++)); do
+        if [ $((arv % i)) -eq 0 ]; then
+            return 1  # Arv ei ole algarv
+        fi
+    done
+    return 0  # Arv on algarv
+}
+
+# Kutsu funktsiooni ja väljasta vastav teade
+if on_algarv; then
+    echo "$arv on algarv."
+else
+    echo "$arv ei ole algarv."
+fi
+

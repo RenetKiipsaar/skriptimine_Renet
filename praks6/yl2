@@ -1,0 +1,23 @@
+#!/bin/bash
+# See skript küsib kasutajalt suvalist täisarvu ja arvutab selle numbrite summat.
+
+# Küsi kasutajalt suvalist täisarvu
+read -p "Sisesta suvaline täisarv: " arv
+
+# Kontrolli, kas sisestatud väärtus on täisarv
+if ! [[ "$arv" =~ ^-?[0-9]+$ ]]; then
+    echo "Vigane sisend. Palun sisesta suvaline täisarv."
+    exit 1
+fi
+
+# Initsialiseeri summa muutuja
+summa=0
+
+# Arvuta numbrite summa
+for (( i=0; i<${#arv}; i++ )); do
+    summa=$((summa + ${arv:$i:1}))
+done
+
+# Väljasta tulemus
+echo "Arvu $arv numbrite summa on $summa"
+

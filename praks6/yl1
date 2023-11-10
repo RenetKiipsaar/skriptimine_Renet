@@ -1,0 +1,11 @@
+#!/bin/bash
+# See skript liidab kokku 1-10 paarisarvude summat.
+
+summa=0
+
+for ((number=2; number<=10; number+=2)); do
+    summa=$((summa + number))
+done
+
+echo "Arvude vahemikus 1 kuni 10 (kaasaarvutatud) paarisarvude summa on: $summa"
+
