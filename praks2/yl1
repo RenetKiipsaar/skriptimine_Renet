@@ -1,0 +1,15 @@
+#/bin/bash
+
+
+#küsib kasutajalt kasutaja nime
+read -p "Sisesta oma kasutajanimi: " kasutajanimi
+
+
+#Tervitab kasutajat
+echo -n "Tere $kasutajanimi"
+
+
+#lisab ! märgi
+echo "!"
+
+

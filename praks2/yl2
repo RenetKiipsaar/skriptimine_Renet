@@ -1,0 +1,10 @@
+#/bin/bash
+
+
+#vaatab kes on kasutaja 
+kasutaja=$(whoami)
+
+
+#Tervitab kasutajat tema nimega
+echo "Tere $kasutaja! "
+

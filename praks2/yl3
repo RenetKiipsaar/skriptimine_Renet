@@ -1,0 +1,16 @@
+#!/bin/bash
+# See skript väljastab kasutajale kuupäeva ja ajaga seotud info.
+
+# Väljastab täieliku kuupäeva ja kellaaja
+echo "Täielik kuupäev ja kellaaeg: $(date)"
+
+# Väljastab ainult kuupäeva
+echo "Kuupäev: $(date +%Y-%m-%d)"
+
+# Väljastab ainult kellaaega
+echo "Kellaaeg: $(date +%H:%M:%S)"
+
+# Väljastab nädalapäeva
+echo "Nädalapäev: $(date +%A)"
+
+
