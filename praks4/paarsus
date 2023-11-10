@@ -1,0 +1,19 @@
+#!/bin/bash
+# See skript kontrollib, kas antud arv on paaris või paaritu.
+
+# Kontrolli, kas skriptile anti täpselt üks argument käivitamisel
+if [ $# -ne 1 ]; then
+    echo "Palun sisesta täpselt üks täisarv käivitamisel."
+    exit 1
+fi
+
+# Salvesta käivitamisel antud argument muutujasse
+arv=$1
+
+# Kontrolli, kas antud arv on paaris või paaritu
+if [ $((arv % 2)) -eq 0 ]; then
+    echo "Antud arv $arv on paaris."
+else
+    echo "Antud arv $arv on paaritu."
+fi
+
