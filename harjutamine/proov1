@@ -1,0 +1,5 @@
+#!/bin/bash
+
+echo "Tere!"
+sleep 1.5
+echo "Headaega!"
